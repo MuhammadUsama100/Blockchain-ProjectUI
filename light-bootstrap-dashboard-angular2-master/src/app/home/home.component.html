@@ -1,0 +1,59 @@
+<div class="main-content">
+    <b> Login User Public Key : {{account}}</b>
+    <br>
+    <br>
+    <div class="container-fluid">
+        <div class="row" *ngFor="let item of Data">
+            <div>
+                <h5>Store Name : {{item.storeName}}</h5>
+                <h5>Store Type : {{item.storeType}}</h5>
+            </div>
+            <div class="row">
+
+                <div class="col-md-4" *ngFor="let product of item.products">
+                    <div class="card">
+                        <div class="header">
+                            <h4 class="title">{{product.productName}} </h4>
+                            <p class="category">{{product.productId}} </p>
+                        </div>
+                        <div class="content">
+                            <img src="{{product.image}}" alt="Smiley face" height="300" class="center" width="300">
+
+                            <b>{{product.price}} ether</b>
+                            <br>
+                            <b>
+                                {{product.price * 2 }} WC
+                            </b>
+
+                            <div class="footer">
+                                <div class="legend">
+                                    <!-- <span *ngFor="let item of legendItems">
+                                        <i></i> item.title
+                                    </span> -->
+                                </div>
+                                <br>
+                                <br>
+                                <div class="center">
+
+                                    <button type="button" style='margin-right:10px' class="btn btn-primary btn-xs"
+                                        (click)="PayEther(product , item)">Pay Ether </button>
+                                    <button type="button" style='margin-right:10px' class="btn btn-secondary btn-xs"
+                                        (click)="PayWc(product , item)">Pay
+                                        WC</button>
+                                    <button type="button" style='margin-right:10px' class="btn btn-success btn-xs"
+                                        (click)="openDialog(product , item)">Pay
+                                        NFT</button>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
